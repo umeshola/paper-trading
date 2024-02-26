@@ -1,33 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+     :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.hover-2 {
+    background-image: linear-gradient(#1095c1 0 0);
+    background-size: 200% .08em;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s, background-position .3s .3s;
+}
+
+.hover-2:hover {
+    transition: background-size .3s .3s, background-position .3s;
+    background-size: 200% 100%;
+    background-position: 100% 100%;
 }
